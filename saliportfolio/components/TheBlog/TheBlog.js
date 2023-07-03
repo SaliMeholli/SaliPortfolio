@@ -1,7 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./TheBlog.module.scss";
 // import photo from "../../public/images/photo1.webp";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 function TheBlog({
   title,
   description,
@@ -11,35 +13,44 @@ function TheBlog({
   latest,
   date,
 }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+
   return (
-    <div>
-      {latest && !lastBlog && (
-        <div className={styles.lastBlog}>
-          <div className={styles.lastBlogCard}>
-            <Image
-              src={photo}
-              width={400}
-              height={300}
-              style={{ objectFit: "cover" }}
-              alt=" "
-              priority
-            />
-          </div>
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <div className={styles.datetime}>
-              <p className={styles.readTime}>{readTime} MIN READ</p>
-              <p className={styles.Date}>{date}</p>
+    <div className={styles.outerContainer}>
+      <div className={styles.container}>
+        {latest && !lastBlog && (
+          <div className={styles.lastBlog}>
+            <div className={styles.lastBlogCard}>
+              <Image
+                src={photo}
+                width={400}
+                height={300}
+                style={{ objectFit: "cover" }}
+                alt=" "
+                priority
+              />
+            </div>
+            <div>
+              <h1>{title}</h1>
+              <p>{description}</p>
+              <div className={styles.datetime}>
+                <p className={styles.readTime}>{readTime} MIN READ</p>
+                <p className={styles.Date}>{date}</p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {!latest &&
-        !lastBlog && ( // Add this condition to exclude lastBlog from rendering again
-          <div className={styles.container}>
-            <div className={styles.cards}>
+        {!latest && !lastBlog && (
+          <div className={styles.cards} ref={ref}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
               <div className={styles.card}>
                 <Image
                   src={photo}
@@ -55,9 +66,10 @@ function TheBlog({
                 <h1>{title}</h1>
                 <p>{description}</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
+      </div>
     </div>
   );
 }

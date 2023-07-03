@@ -1,53 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 .container {
-    padding: 0 0rem;
-    // margin-top: 150px;
-    // background-color: red;
-    width: 600px;
-    margin: 150px auto 0 auto;
-  }
-  
-  .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
- 
-  
- .textContent {
+  padding: 0 1rem; /* Adjust the padding as needed */
+  width: 100%;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 150px auto;
+}
+
+.main {
+  min-height: 100vh; /* Adjust the value to accommodate the header and footer heights */
+  padding: 2rem 1rem; /* Adjust the padding as needed */
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
   flex-direction: column;
   align-items: center;
- }
- .textContent div{
-  justify-content: center;
-  // width: 600px;
-  // margin: 0 300px;
- }
+  padding: 20px;
+  text-align: left;
+}
 
-  
- 
+.textContent h1 {
+  text-align: center;
+}
+.textContent a {
+  text-align: left;
+}
+.textContent p {
+  text-align: left;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
 
+@media (max-width: 620px) {
+  .textContent img {
+  width: 450px;
+  height: 350px;
+}
+}
 
-  .textContent {
-    // text-align: center;
-    // width: 600px;
-    color: white;
-  }
+@media (max-width: 500px) {
+  .textContent img {
+  width: 350px;
+  height: 250px;
+}
+}
 
-  .textContent h1 {
-    text-align: center;
-   
-  }
-  .textContent p {
-    // text-align: center;
-    letter-spacing: 2px;
-   
-  }
- 
-  
+.ReactMarkdown {
+  margin-bottom: 60px;
+}
+.GoBack {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f1f1f1;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.GoBack:hover {
+  background-color: #ddd;
+}

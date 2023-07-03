@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.container {
+    min-height: 70vh;
+    max-height: auto;
+//    background-color: #0e4f77;
+}
+
+.container h1{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.vertical-timeline-element {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1450px) {
+    .container {
+       margin-top: 150px;
+    }
+}
+
+
+.dateClassName {
+    color :#248bcc;
+}
+
+.VerticalTimeline {
+    margin-top: 50px;
+}
+
+// .VerticalTimeline:nth-child(1)::before {
+//     display: none;
+//   }
+
+.vertical-timeline::before {
+    display: none;
+}

@@ -4,8 +4,15 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar/Navbar";
+import HomePage from "../components/HomePage/HomePage";
+import Footer from "../components/Footer/Footer";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import BlogSection from "../components/BlogSection/BlogSection";
+import Experience from "../components/Experience/Experience";
 
-export default function Home() {
+export default function Home({ BlogsContent }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +21,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <HomePage />
+      <BlogSection blogs={BlogsContent} />
+      <Experience />
+      <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const BlogFiles = fs.readdirSync(path.join("content/posts"));
+
+  const BlogsContent = BlogFiles.map((BlogFilename) => {
+    const markDownBlog = fs.readFileSync(
+      path.join("content/posts", BlogFilename),
+      "utf-8"
+    );
+    const { data: frontmatter, content: markdownContent } =
+      matter(markDownBlog);
+
+    return {
+      frontmatter,
+      markdownContent,
+    };
+  }).slice(0, 3); // Slice the first 3 blogs
+
+  // console.log(BlogsContent);
+
+  return {
+    props: {
+      BlogsContent,
+    },
+  };
 }

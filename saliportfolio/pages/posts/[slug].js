@@ -8,6 +8,11 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import { remark } from "remark";
 import Link from "next/link";
+import SocialIcons from "../../components/socialIcons/SocialIcons";
+import { motion } from "framer-motion";
+import PageProgressIndicator from "../../components/ScrollIndicator";
+import readingTime from "reading-time";
+import Footer from "../../components/Footer/Footer";
 const slugify = (text) => {
   return text
     .toString()
@@ -42,11 +47,10 @@ const generateTableOfContents = (markdownContent) => {
   return headings;
 };
 
-function PostPage({ PostpagesData }) {
+function PostPage({ PostpagesData, BlogsContent }) {
   const tableOfContents = generateTableOfContents(
     PostpagesData?.markdownContent
   );
-  console.log(tableOfContents);
 
   const components = {
     h1: (props) => (
@@ -73,26 +77,75 @@ function PostPage({ PostpagesData }) {
 
     code: ({ children }) => <code className={classes.code}>{children}</code>,
   };
-  return (
-    <div className={styles.container}>
-      <Navbar />
+  const blog = {
+    path: PostpagesData?.frontmatter.path,
+    title: PostpagesData?.frontmatter.title,
+    leadText: PostpagesData?.frontmatter.leadText,
+    description: PostpagesData?.frontmatter.description,
+    date: PostpagesData?.frontmatter.date,
+    content: PostpagesData?.body,
+    image: PostpagesData?.frontmatter.image,
+    headerImage: PostpagesData?.frontmatter.headerImage,
+    author: PostpagesData?.frontmatter.author,
+    lng: PostpagesData?.frontmatter.lng,
+    tags: PostpagesData?.frontmatter.tags,
+    services: PostpagesData?.frontmatter.services,
+    projects: PostpagesData?.frontmatter.projects,
+  };
 
-      <div className={styles.textContainer}>
-        <div className={styles.textContent}>
-          <Image
-            src={PostpagesData.frontmatter.image}
-            width={600}
-            height={300}
-            alt=""
-          />
-          <h1>{PostpagesData.frontmatter.title}</h1>
-          <div className={styles.ReactMarkdown}>
-            <ReactMarkdown components={components}>
-              {PostpagesData?.markdownContent}
-            </ReactMarkdown>
+  return (
+    <div className={styles.PostPageContainer}>
+      <div className={styles.container}>
+        <Navbar />
+        <PageProgressIndicator />
+        <SocialIcons />
+        <div className={styles.contentContainer}>
+          {/* <div className={styles.tocContainer}>
+          {tableOfContents.map((item) => (
+            <Link
+              style={{ marginLeft: `${item.level * 15}px` }}
+              key={item.id}
+              href={`#${item.id}`}
+            >
+              {item.text}
+            </Link>
+          ))}
+        </div> */}
+          <div className={styles.divider}></div>
+          <div className={styles.textContent}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }} // Add delay based on index
+            >
+              <Image
+                src={PostpagesData?.frontmatter?.image}
+                width={600}
+                height={300}
+                alt=""
+              />
+            </motion.div>
+            <h1>{PostpagesData?.frontmatter?.title}</h1>
+            <div className={styles.ReactMarkdown}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.5 }} // Add delay based on index
+              >
+                <ReactMarkdown components={components}>
+                  {PostpagesData?.markdownContent}
+                </ReactMarkdown>
+              </motion.div>
+            </div>
+            <Link href="/posts" className={styles.GoBack}>
+              Go Back
+            </Link>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
@@ -142,18 +195,18 @@ export async function getStaticProps({ params }) {
       frontmatter,
       markdownContent,
     };
-  });
+  }).filter((blog) => blog !== undefined);
 
   const PostpagesData = BlogsContent.find(
     (Postpage) => Postpage.frontmatter.path === slug
   );
 
-  console.log(PostpagesData.frontmatter.path);
+  
   return {
     props: {
       PostpagesData,
 
-      BlogsContent: BlogsContent,
+      BlogsContent,
     },
   };
 }

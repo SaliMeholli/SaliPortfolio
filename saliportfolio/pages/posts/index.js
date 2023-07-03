@@ -9,14 +9,17 @@ import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
+import SocialIcons from "../../components/socialIcons/SocialIcons";
+import Footer from "../../components/Footer/Footer";
 function posts({ BlogFiles, BlogsContent }) {
   const { blogs, lastBlog } = getBlogPosts(BlogsContent);
-  // console.log(lastBlog);
+
   return (
     <div className={styles.container}>
       <Navbar />
-
+      <SocialIcons />
       <LatestBlogs blogs={blogs} lastBlog={lastBlog} />
+      <Footer />
     </div>
   );
 }
@@ -34,7 +37,7 @@ function getBlogPosts(BlogsContent) {
     };
   });
   const lastBlog = blogs[0];
- 
+
   return {
     blogs,
     lastBlog,

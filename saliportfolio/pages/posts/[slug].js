@@ -75,7 +75,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
       </h3>
     ),
 
-    code: ({ children }) => <code className={classes.code}>{children}</code>,
+    code: ({ children }) => <code className={styles.code}>{children}</code>,
   };
   const blog = {
     path: PostpagesData?.frontmatter.path,
@@ -201,7 +201,6 @@ export async function getStaticProps({ params }) {
     (Postpage) => Postpage.frontmatter.path === slug
   );
 
-  
   return {
     props: {
       PostpagesData,

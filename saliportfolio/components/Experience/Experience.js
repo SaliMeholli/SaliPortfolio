@@ -1,4 +1,4 @@
-import React from "react";
+import { useInView } from "react-intersection-observer";
 import styles from "./Experience.module.scss";
 import {
   VerticalTimeline,
@@ -6,10 +6,11 @@ import {
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
-
+import React, { useEffect, useRef, useState } from "react";
 import CentralLogo from "../../public/images/central-logo.svg";
 import UbtLogo from "../../public/images/ubt-logo.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -30,8 +31,8 @@ const ExperienceCard = ({ experience }) => {
         <h3 className="vertical-timeline-element-title">CentralSoft</h3>
         <h4 className="vertical-timeline-element-subtitle">Prishtina</h4>
         <p>
-          Front-end Development Frameworks: React, Next. Version Control: Git,
-          Bitbucket, GitHub, GitLab etc.
+          Front-end Development Frameworks: React, Next. <br />
+          Version Control: Git, Bitbucket, GitHub, GitLab etc.
         </p>
       </VerticalTimelineElement>
 
@@ -56,7 +57,7 @@ const ExperienceCard = ({ experience }) => {
 };
 function Experience() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="experience">
       <h1>Experience and Education</h1>
 
       <motion.div>

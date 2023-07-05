@@ -7,30 +7,82 @@
 .HomeContainer {
     margin-top: 50px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
+    flex-direction:row-reverse;
     align-items: center;
+    flex-wrap: wrap;
   }
-
-.HomeContainer img {
+.HomeContainer div {
+  margin: 20px;
+}
+.HomeContainer .ImageContainer img {
     border-radius: 200px;
+    border: 5px solid #248bcc;
 }
 
 .HomeContainer p {
-    text-align: center;
+    // text-align: center;
     width: 600px;
     font-family: "Poppins", sans-serif !important;
+    font-size: 20px;
+    color: #555;
   }
 
   .HomeContainer h1 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    // text-align: center;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: bold;
   }
   
   @media (max-width: 768px) {
+    .HomeContainer h1 {
+      text-align: center;
+      
+    }
     .HomeContainer p {
-      width: 90%;
+      width: 100%;
+      text-align: center;
     }
   }
+@media (max-width: 1000px) {
+  .HomeContainer {
+    margin-top: 100px;
+    
+  }
+}
+ .TechIcons {
+  display: flex;
+  align-items: center;
+ }
+
+ .TextContainer h1 span{
+  color: #248bcc;
+ }
+
+
+ .TextContainer h1 {
+  --s: 0.1em;   
+  --c: #248bcc; 
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 1s;
+}
+.TextContainer h1:hover {--_p: 100%}
+
+@media (max-width: 980px) {
+  .HomeContainer {
+    
+    min-height: 70vh;
+   
+  }
+}

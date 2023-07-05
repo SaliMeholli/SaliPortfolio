@@ -15,4 +15,13 @@ a {
 
 * {
   box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+code {
+  background: #fdfaf6;
+border-radius: 0.3em;
+
+
+overflow: auto;
 }

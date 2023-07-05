@@ -17,10 +17,8 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
 
   return (
-    
     <div className={`${styles.container} ${isScrolled ? styles.scrolled : ""}`}>
       <Link href="/">Home</Link>
       {/* <Link href="#about">About</Link> */}

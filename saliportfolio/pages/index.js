@@ -4,13 +4,15 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar/Navbar";
-import HomePage from "../components/HomePage/HomePage";
-import Footer from "../components/Footer/Footer";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import BlogSection from "../components/BlogSection/BlogSection";
+import dynamic from "next/dynamic";
+import HomePage from "../components/HomePage/HomePage";
 import Experience from "../components/Experience/Experience";
+import Contact from "../components/contact/Contact";
+import Footer from "../components/Footer/Footer";
+import BlogSection from "../components/BlogSection/BlogSection";
 
 export default function Home({ BlogsContent }) {
   return (
@@ -22,8 +24,10 @@ export default function Home({ BlogsContent }) {
       </Head>
       <Navbar />
       <HomePage />
+
       <BlogSection blogs={BlogsContent} />
       <Experience />
+      <Contact />
       <Footer />
     </div>
   );
@@ -44,9 +48,7 @@ export async function getStaticProps() {
       frontmatter,
       markdownContent,
     };
-  }).slice(0, 3); // Slice the first 3 blogs
-
-  // console.log(BlogsContent);
+  }).slice(0, 3); 
 
   return {
     props: {

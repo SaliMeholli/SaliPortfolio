@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .container {
-  padding: 30px 20px;
+  padding: 20px 15px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #333;
+  background-color: rgb(22, 22, 22);
   display: flex;
   justify-content: center;
   z-index: 10;
   transition: all .5s;
+  // border-bottom: 5px solid #248bcc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+
 }
 
 .container a {
@@ -37,12 +40,13 @@
 
 .container a:hover:before {
   transform: scaleX(1);
-  background-color: #fff; /* Adjust the highlight color */
+  background-color: #248bcc; /* Adjust the highlight color */
 }
 
 .container.scrolled {
   background-color: #fff;
   transition: all .5s;
+  box-shadow: 0 0 10px rgba(0,0,0,.09);
 }
 .container.scrolled a:before {
   content: "";
@@ -61,7 +65,7 @@
 
 .container.scrolled a:hover:before {
   transform: scaleX(1);
-  background-color: #333; /* Adjust the highlight color */
+  background-color: #248bcc; /* Adjust the highlight color */
 }
 
 @media (max-width: 485px) {

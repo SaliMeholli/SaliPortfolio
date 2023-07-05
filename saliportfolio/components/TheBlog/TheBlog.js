@@ -14,7 +14,7 @@ function TheBlog({
   date,
 }) {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     rootMargin: "-100px 0px",
   });
 
@@ -23,6 +23,12 @@ function TheBlog({
       <div className={styles.container}>
         {latest && !lastBlog && (
           <div className={styles.lastBlog}>
+            {/* <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+            > */}
             <div className={styles.lastBlogCard}>
               <Image
                 src={photo}
@@ -41,6 +47,7 @@ function TheBlog({
                 <p className={styles.Date}>{date}</p>
               </div>
             </div>
+            {/* </motion.div> */}
           </div>
         )}
 

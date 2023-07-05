@@ -10,7 +10,7 @@ import matter from "gray-matter";
 import dynamic from "next/dynamic";
 import HomePage from "../components/HomePage/HomePage";
 import Experience from "../components/Experience/Experience";
-// import Contact from "../components/Contact/Contact";
+import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import BlogSection from "../components/BlogSection/BlogSection";
 
@@ -27,7 +27,7 @@ export default function Home({ BlogsContent }) {
 
       <BlogSection blogs={BlogsContent} />
       <Experience />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );

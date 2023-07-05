@@ -10,7 +10,7 @@ import matter from "gray-matter";
 import dynamic from "next/dynamic";
 import HomePage from "../components/HomePage/HomePage";
 import Experience from "../components/Experience/Experience";
-import Contact from "../components/contact/Contact";
+import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import BlogSection from "../components/BlogSection/BlogSection";
 
@@ -48,7 +48,7 @@ export async function getStaticProps() {
       frontmatter,
       markdownContent,
     };
-  }).slice(0, 3); 
+  }).slice(0, 3);
 
   return {
     props: {

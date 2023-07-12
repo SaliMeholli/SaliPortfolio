@@ -29,7 +29,7 @@ const generateTableOfContents = (markdownContent) => {
   const ast = processor.parse(markdownContent);
 
   const headings = [];
-
+  //q2
   const visit = (node, level) => {
     if (node.type === "heading") {
       const id = node.data?.id || slugify(node.children?.[0]?.value || "");

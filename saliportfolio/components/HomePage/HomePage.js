@@ -24,6 +24,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 function HomePage() {
   const [ref, inView] = useInView({
     triggerOnce: false,
+
     rootMargin: "-100px 0px",
   });
   return (

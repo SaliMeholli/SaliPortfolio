@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./HomePage.module.scss";
 //
 import SocialIcons from "../../components/socialIcons/SocialIcons";
-import Lottie from "react-lottie";
+
 import animationData from "../socialIcons/SocialIcons";
 import SaliImage from "../../public/images/sali.jpeg";
 import { motion } from "framer-motion";
@@ -42,8 +42,7 @@ function HomePage() {
           </div>
           <div className={styles.TextContainer}>
             <h1>
-              I am a 
-              <span>fullstack developer</span>
+              I am a<span>fullstack developer</span>
             </h1>
             <p>
               Hi, I&apos;m Sali Meholli.A passionate full-stack developer based

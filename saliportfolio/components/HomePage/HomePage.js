@@ -20,7 +20,7 @@ import {
   BiLogoGraphql,
 } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
-// import { Particles } from "../Particles/Particles";
+// import { Particles } from "../Particles/Particles"; //
 function HomePage() {
   const [ref, inView] = useInView({
     triggerOnce: false,

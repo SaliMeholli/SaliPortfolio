@@ -27,7 +27,7 @@ function LatestBlogs({ blogs, lastBlog }) {
       </Link>
       <div className={styles.cards}>
         {blogs.map((item, index) => (
-          <Link href={`/posts/${item.path}`} key={item}>
+          <Link href={`/posts/${item.path}`} key={item.path}>
             <TheBlog
               title={item.title}
               description={item.description}

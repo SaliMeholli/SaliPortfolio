@@ -12,6 +12,7 @@ import HtmlLogo from "../../public/images/html.png";
 import JsLogo from "../../public/images/js.svg";
 import CssLogo from "../../public/images/css.svg";
 import { AiFillHtml5 } from "react-icons/ai";
+
 import {
   BiLogoCss3,
   BiLogoJavascript,
@@ -19,6 +20,7 @@ import {
   BiLogoGraphql,
 } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
+// import { Particles } from "../Particles/Particles";
 function HomePage() {
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -26,6 +28,7 @@ function HomePage() {
   });
   return (
     <div className={styles.container} ref={ref}>
+      {/* <Particles /> */}
       <SocialIcons />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -39,7 +42,8 @@ function HomePage() {
           </div>
           <div className={styles.TextContainer}>
             <h1>
-              I am a <span>fullstack developer</span>
+              I am a 
+              <span>fullstack developer</span>
             </h1>
             <p>
               Hi, I&apos;m Sali Meholli.A passionate full-stack developer based

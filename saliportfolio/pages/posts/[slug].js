@@ -154,6 +154,7 @@ export default PostPage;
 
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join("content/posts"));
+
   const paths = [];
 
   const localizedPaths = files.map((filename) => {
@@ -179,7 +180,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-
+  
   // Read the files in the blogs directory
   const BlogFiles = fs.readdirSync(path.join("content/posts"));
 
@@ -195,7 +196,7 @@ export async function getStaticProps({ params }) {
       frontmatter,
       markdownContent,
     };
-  }).filter((blog) => blog !== undefined);
+  });
 
   const PostpagesData = BlogsContent.find(
     (Postpage) => Postpage.frontmatter.path === slug

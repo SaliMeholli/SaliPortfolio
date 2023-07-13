@@ -33,26 +33,26 @@ export default function Home({ BlogsContent }) {
   );
 }
 
-export async function getStaticProps() {
-  const BlogFiles = fs.readdirSync(path.join("content/posts"));
+// export async function getStaticProps() {
+//   const BlogFiles = fs.readdirSync(path.join("content/posts"));
 
-  const BlogsContent = BlogFiles.map((BlogFilename) => {
-    const markDownBlog = fs.readFileSync(
-      path.join("content/posts", BlogFilename),
-      "utf-8"
-    );
-    const { data: frontmatter, content: markdownContent } =
-      matter(markDownBlog);
+//   const BlogsContent = BlogFiles.map((BlogFilename) => {
+//     const markDownBlog = fs.readFileSync(
+//       path.join("content/posts", BlogFilename),
+//       "utf-8"
+//     );
+//     const { data: frontmatter, content: markdownContent } =
+//       matter(markDownBlog);
 
-    return {
-      frontmatter,
-      markdownContent,
-    };
-  }).slice(0, 3);
+//     return {
+//       frontmatter,
+//       markdownContent,
+//     };
+//   }).slice(0, 3);
 
-  return {
-    props: {
-      BlogsContent,
-    },
-  };
-}
+//   return {
+//     props: {
+//       BlogsContent,
+//     },
+//   };
+// }

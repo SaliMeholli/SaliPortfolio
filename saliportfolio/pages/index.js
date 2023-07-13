@@ -4,9 +4,9 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar/Navbar";
-// import fs from "fs";
-// import path from "path";
-// import matter from "gray-matter";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import dynamic from "next/dynamic";
 import HomePage from "../components/HomePage/HomePage";
 import Experience from "../components/Experience/Experience";
@@ -25,7 +25,7 @@ export default function Home({ BlogsContent }) {
       <Navbar />
       <HomePage />
 
-      {/* <BlogSection blogs={BlogsContent} /> */}
+      <BlogSection blogs={BlogsContent} />
       <Experience />
       <Contact />
       <Footer />
@@ -33,26 +33,26 @@ export default function Home({ BlogsContent }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const BlogFiles = fs.readdirSync(path.join("content/posts"));
+export async function getStaticProps() {
+  const BlogFiles = fs.readdirSync(path.join("content/Posts"));
 
-//   const BlogsContent = BlogFiles.map((BlogFilename) => {
-//     const markDownBlog = fs.readFileSync(
-//       path.join("content/posts", BlogFilename),
-//       "utf-8"
-//     );
-//     const { data: frontmatter, content: markdownContent } =
-//       matter(markDownBlog);
+  const BlogsContent = BlogFiles.map((BlogFilename) => {
+    const markDownBlog = fs.readFileSync(
+      path.join("content/Posts", BlogFilename),
+      "utf-8"
+    );
+    const { data: frontmatter, content: markdownContent } =
+      matter(markDownBlog);
 
-//     return {
-//       frontmatter,
-//       markdownContent,
-//     };
-//   }).slice(0, 3);
+    return {
+      frontmatter,
+      markdownContent,
+    };
+  }).slice(0, 3);
 
-//   return {
-//     props: {
-//       BlogsContent,
-//     },
-//   };
-// }
+  return {
+    props: {
+      BlogsContent,
+    },
+  };
+}

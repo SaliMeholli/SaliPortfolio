@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
-
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -22,7 +22,15 @@ function Navbar() {
     <div className={`${styles.container} ${isScrolled ? styles.scrolled : ""}`}>
       <Link href="/">Home</Link>
       {/* <Link href="#about">About</Link> */}
-      <Link href="#experience">Experience</Link>
+      <ScrollLink
+        to="experience"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
+        Experience
+      </ScrollLink>
       <Link href="/posts">Posts</Link>
     </div>
   );

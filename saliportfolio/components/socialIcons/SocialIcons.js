@@ -27,7 +27,7 @@ function SocialIcons() {
           <span>Sali Meholli</span>
         </a>
         <a href="https://github.com/SaliMeholli" className={styles.link}>
-          <FaGithub size={32} color="#333" />
+          <FaGithub size={32} color="rgb(121, 121, 121)" />
           <span>SaliMeholli</span>
         </a>
       </div>

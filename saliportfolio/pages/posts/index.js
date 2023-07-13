@@ -45,7 +45,7 @@ function getBlogPosts(BlogsContent) {
 }
 
 export async function getStaticProps() {
-  const BlogFiles = fs.readdirSync(path.join("content/posts"));
+  const BlogFiles = fs.readdirSync(path.join("content/Posts"));
 
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(

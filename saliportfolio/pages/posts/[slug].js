@@ -90,7 +90,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
 export default PostPage;
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("content/posts"));
+  const files = fs.readdirSync(path.join("content/Posts"));
 
   const paths = [];
 
@@ -118,7 +118,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const BlogFiles = fs.readdirSync(path.join("content/posts"));
+  const BlogFiles = fs.readdirSync(path.join("content/Posts"));
   console.log(BlogFiles);
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(

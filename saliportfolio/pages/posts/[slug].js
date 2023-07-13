@@ -108,18 +108,19 @@ export async function getStaticPaths() {
       },
     };
   });
-
+  // console.log();
   return {
     paths,
     fallback: false,
   };
+  paths.push(...localizedPaths);
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
   const BlogFiles = fs.readdirSync(path.join("content/Posts"));
-  console.log(BlogFiles);
+  
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(
       path.join("content/Posts", BlogFilename),

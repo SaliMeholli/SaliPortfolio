@@ -96,7 +96,7 @@ export async function getStaticPaths() {
 
   const localizedPaths = files.map((filename) => {
     const markdownWithMetadata = fs.readFileSync(
-      path.join("content", "posts", filename),
+      path.join("content", "Posts", filename),
       "utf-8"
     );
     const { data } = matter(markdownWithMetadata);
@@ -122,7 +122,7 @@ export async function getStaticProps({ params }) {
   console.log(BlogFiles);
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(
-      path.join("content/posts", BlogFilename),
+      path.join("content/Posts", BlogFilename),
       "utf-8"
     );
     const { data: frontmatter, content: markdownContent } =

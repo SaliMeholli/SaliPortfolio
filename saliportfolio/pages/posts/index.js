@@ -49,7 +49,7 @@ export async function getStaticProps() {
 
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(
-      path.join("content/posts", BlogFilename),
+      path.join("content/Posts", BlogFilename),
       "utf-8"
     );
     const { data: frontmatter, content: markdownContent } =

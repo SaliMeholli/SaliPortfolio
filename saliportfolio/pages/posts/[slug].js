@@ -13,70 +13,8 @@ import { motion } from "framer-motion";
 import PageProgressIndicator from "../../components/ScrollIndicator";
 import readingTime from "reading-time";
 import Footer from "../../components/Footer/Footer";
-const slugify = (text) => {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "")
-    .replace(/--+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-};
-
-const generateTableOfContents = (markdownContent) => {
-  const processor = remark();
-  const ast = processor.parse(markdownContent);
-
-  const headings = [];
-  //q22
-  const visit = (node, level) => {
-    if (node.type === "heading") {
-      const id = node.data?.id || slugify(node.children?.[0]?.value || "");
-      const text = node.children?.[0]?.value || "";
-      headings.push({ level, id, text });
-    }
-
-    if (node.children) {
-      node.children.forEach((child) => visit(child, level + 1));
-    }
-  };
-
-  ast.children.forEach((node) => visit(node, 1));
-
-  return headings;
-};
 
 function PostPage({ PostpagesData, BlogsContent }) {
-  const tableOfContents = generateTableOfContents(
-    PostpagesData?.markdownContent
-  );
-
-  const components = {
-    h1: (props) => (
-      <h1 {...props} id={`${slugify(props.children)}`}>
-        <a href={`#${slugify(props.children)}`}>{props.children}</a>
-      </h1>
-    ),
-    // Define any custom components or overrides here
-    h3: (props) => (
-      <h3 {...props} id={`${slugify(props.children)}`}>
-        <a href={`#${slugify(props.children)}`}>{props.children}</a>
-      </h3>
-    ),
-    h2: (props) => (
-      <h2 {...props} id={`${slugify(props.children)}`}>
-        <a href={`#${slugify(props.children)}`}>{props.children}</a>
-      </h2>
-    ),
-    h4: (props) => (
-      <h3 {...props} id={`${slugify(props.children)}`}>
-        <a href={`#${slugify(props.children)}`}>{props.children}</a>
-      </h3>
-    ),
-
-    code: ({ children }) => <code className={styles.code}>{children}</code>,
-  };
   const blog = {
     path: PostpagesData?.frontmatter.path,
     title: PostpagesData?.frontmatter.title,
@@ -124,6 +62,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
                 width={600}
                 height={300}
                 alt=""
+                priority
               />
             </motion.div>
             <h1>{PostpagesData?.frontmatter?.title}</h1>
@@ -134,9 +73,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.5 }} // Add delay based on index
               >
-                <ReactMarkdown components={components}>
-                  {PostpagesData?.markdownContent}
-                </ReactMarkdown>
+                <ReactMarkdown>{PostpagesData?.markdownContent}</ReactMarkdown>
               </motion.div>
             </div>
             <Link href="/posts" className={styles.GoBack}>
@@ -183,7 +120,7 @@ export async function getStaticProps({ params }) {
 
   // Read the files in the blogs directory
   const BlogFiles = fs.readdirSync(path.join("content/posts"));
-
+  console.log(BlogFiles);
   const BlogsContent = BlogFiles.map((BlogFilename) => {
     const markDownBlog = fs.readFileSync(
       path.join("content/posts", BlogFilename),

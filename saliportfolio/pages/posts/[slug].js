@@ -180,7 +180,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  
+
   // Read the files in the blogs directory
   const BlogFiles = fs.readdirSync(path.join("content/posts"));
 

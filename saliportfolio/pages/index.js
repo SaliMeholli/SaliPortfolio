@@ -25,7 +25,7 @@ export default function Home({ BlogsContent }) {
       <Navbar />
       <HomePage />
 
-      <BlogSection blogs={BlogsContent} />
+      {/* <BlogSection blogs={BlogsContent} /> */}
       <Experience />
       <Contact />
       <Footer />

@@ -86,7 +86,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
     </div>
   );
 }
-//12
+//123
 export default PostPage;
 
 export async function getStaticPaths() {
@@ -118,7 +118,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  // Read the files in the blogs directory
   const BlogFiles = fs.readdirSync(path.join("content/posts"));
   console.log(BlogFiles);
   const BlogsContent = BlogFiles.map((BlogFilename) => {
@@ -142,7 +141,6 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       PostpagesData,
-
       BlogsContent,
     },
   };

@@ -86,7 +86,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
     </div>
   );
 }
-
+//12
 export default PostPage;
 
 export async function getStaticPaths() {

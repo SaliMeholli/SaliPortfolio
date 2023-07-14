@@ -133,10 +133,10 @@
 }
 .TextContainer h1:hover {--_p: 100%}
 
-// @media (max-width: 980px) {
-//   .HomeContainer {
+@media (max-width: 450px) {
+  .HomeContainer {
     
-//     min-height: 70vh;
+   padding-top: 50px;
    
-//   }
-// }
+  }
+}

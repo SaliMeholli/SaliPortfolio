@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import PageProgressIndicator from "../../components/ScrollIndicator";
 import readingTime from "reading-time";
 import Footer from "../../components/Footer/Footer";
-import Contact from "../../components/contact/Contact";
+import Contact from "../../components/Contact/Contact";
 function PostPage({ PostpagesData, BlogsContent }) {
   const blog = {
     path: PostpagesData?.frontmatter.path,

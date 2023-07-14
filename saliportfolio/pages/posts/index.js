@@ -11,7 +11,7 @@ import readingTime from "reading-time";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import SocialIcons from "../../components/socialIcons/SocialIcons";
 import Footer from "../../components/Footer/Footer";
-import Contact from "../../components/contact/Contact";
+import Contact from '../../components/Contact/Contact'
 function posts({ BlogFiles, BlogsContent }) {
   const { blogs, lastBlog } = getBlogPosts(BlogsContent);
 

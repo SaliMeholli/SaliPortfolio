@@ -1,18 +1,18 @@
 ---
 path: Post3
-description: Markdown can be defined as a plain text formatting syntax used to write content on the web. It’s commonly used by writers and programmers to write quickly without having to take time using the formatting toolbar of text editors.
-title: Post3
-image: /images/Tech_blog_photo.png
+description: Intersection Observer is a web-based API that enables developers to detect when a specific element intersects with another element or the viewport.You can use this API to monitor any changes in the visibility of an element as it intersects with another element, or exits / enters the viewport.
+title:  Reveal on Scroll with Intersection Observer
+image: /images/react-intersection-observer.png
 date: 07.04.2023
 ---
 
-# Portfolio
+# What is React Intersection Observer
 
 Welcome to my portfolio page! Here, I showcase my work, projects, and skills. Feel free to explore and learn more about what I can offer.
 
-## Simplicity and Ease of Use
+## How the Intersection Observer API Works
 
-Markdown's primary strength lies in its simplicity. Unlike complex formatting languages or HTML, Markdown uses a straightforward syntax that is intuitive and easy to learn. With just a few simple symbols and plain text, you can easily structure your content without the need for excessive code or technical knowledge. The minimalistic approach of Markdown allows developers, writers, and even non-technical team members to create content quickly and efficiently.
+Let's break this down the React Intersection Observer API works in a way that it detects an intersection and tells the code what to do next.
 
 ## Portability and Platform Independence
 

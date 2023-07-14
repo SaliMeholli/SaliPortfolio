@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import PageProgressIndicator from "../../components/ScrollIndicator";
 import readingTime from "reading-time";
 import Footer from "../../components/Footer/Footer";
-
+import Contact from "../../components/contact/Contact";
 function PostPage({ PostpagesData, BlogsContent }) {
   const blog = {
     path: PostpagesData?.frontmatter.path,
@@ -82,6 +82,7 @@ function PostPage({ PostpagesData, BlogsContent }) {
           </div>
         </div>
       </div>
+      <Contact />
       <Footer />
     </div>
   );
@@ -109,7 +110,7 @@ export async function getStaticPaths() {
     };
   });
   paths.push(...localizedPaths);
-  
+
   // console.log();
   return {
     paths,

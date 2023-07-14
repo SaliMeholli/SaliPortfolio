@@ -21,9 +21,6 @@ a {
 }
 
 code {
-  background: #fdfaf6;
-border-radius: 0.3em;
-
-
-overflow: auto;
+  color: red;
+  /* background-color: rgb(220, 220, 220); */
 }

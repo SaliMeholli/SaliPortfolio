@@ -64,9 +64,9 @@ function TheBlog({
                   src={photo}
                   width={300}
                   height={250}
-                  style={{ objectFit: "cover" }}
+                  // style={{ objectFit: "cover" }}
                   alt=" "
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw, 300px"
                 />
                 <div>
                   <p className={styles.readTime}>{readTime} MIN READ</p>

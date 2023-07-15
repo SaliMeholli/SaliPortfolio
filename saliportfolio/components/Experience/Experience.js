@@ -31,7 +31,7 @@ const ExperienceCard = ({ experience }) => {
         <h3 className="vertical-timeline-element-title">CentralSoft</h3>
         <h4 className="vertical-timeline-element-subtitle">Prishtina</h4>
         <p>
-          Front-end Development Frameworks: React, Next. <br />
+          Front-end Frameworks: React, Next. <br />
           Version Control: Git, Bitbucket, GitHub, GitLab etc.
         </p>
       </VerticalTimelineElement>

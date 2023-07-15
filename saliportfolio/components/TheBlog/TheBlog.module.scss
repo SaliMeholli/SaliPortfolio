@@ -29,7 +29,7 @@
     width: 100%;
     height: 50%;
     border-radius: 5px 5px 0 0;
- 
+    object-fit: cover;
   }
   // .card img:hover {
   //   scale: 5;
@@ -186,7 +186,7 @@
       text-align: left;
       color: inherit;
       text-decoration: none;
-      border: 1px solid #eaeaea;
+      // border: 1px solid #eaeaea;
       // border-radius: 10px;
       transition: color 0.15s ease, border-color 0.15s ease;
      width: 450px;
@@ -205,7 +205,7 @@
       text-align: left;
       color: inherit;
       text-decoration: none;
-      border: 1px solid #eaeaea;
+      // border: 1px solid #eaeaea;
       // border-radius: 10px;
       transition: color 0.15s ease, border-color 0.15s ease;
      width: 95%;
@@ -231,13 +231,23 @@
       text-align: left;
       color: inherit;
       text-decoration: none;
-      border: 1px solid #eaeaea;
+      // border: 1px solid #eaeaea;
       // border-radius: 10px;
       transition: color 0.15s ease, border-color 0.15s ease;
      width: 300px;
-     min-height: 500px;
+     min-height:350px;
      max-height: auto;
      text-align: center;
      
+    }
+  }
+
+
+  @media (max-width: 450px) {
+   
+    .card img {
+      object-fit: contain;
+      height: auto;
+      // width: auto;
     }
   }

@@ -128,6 +128,7 @@ function PostPage({
   useEffect(() => {
     setTableOfContents(GeneratedTableOfContents);
   }, [GeneratedTableOfContents]);
+//
   return (
     <div className={styles.PostPageContainer}>
       <div className={styles.container}>

@@ -216,7 +216,7 @@ function PostPage({
                 </button>
               </Link>
 
-              <Link href={`/posts/${next.frontmatter.path}/`}>
+              <Link href={`/posts/${next?.frontmatter?.path}/`}>
                 <button
                   disabled={!next}
                   className={!next ? styles.disabled : ""}
@@ -272,7 +272,7 @@ function getBlogPosts(cmsBlogs) {
       };
     })
     .slice(0, 3);
-  console.log(blogs);
+  
   return blogs;
 }
 //

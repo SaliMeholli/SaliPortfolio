@@ -5,7 +5,7 @@ import TheBlog from "../TheBlog/TheBlog";
 import Link from "next/link";
 import readingTime from "reading-time";
 function BlogSection({ blogs }) {
-  console.log(blogs);
+  
   return (
     <div className={styles.container}>
       <h1>Latest Blogs</h1>

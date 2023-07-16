@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./PostPage.module.scss";
 import fs from "fs";
@@ -125,6 +125,9 @@ function PostPage({
   const [tableOfContents, setTableOfContents] = useState(
     GeneratedTableOfContents
   );
+  useEffect(() => {
+    setTableOfContents(GeneratedTableOfContents);
+  }, [GeneratedTableOfContents]);
   return (
     <div className={styles.PostPageContainer}>
       <div className={styles.container}>
@@ -236,7 +239,6 @@ function PostPage({
         <h1>Related Blogs</h1>
         <div className={styles.relatedCards}>
           {recentBlogs.map((item) => {
-            console.log(item);
             return (
               <Link href={item.slug} key={item.slug}>
                 <TheBlog
@@ -272,7 +274,7 @@ function getBlogPosts(cmsBlogs) {
       };
     })
     .slice(0, 3);
-  
+
   return blogs;
 }
 //
@@ -299,7 +301,6 @@ export async function getStaticPaths() {
   });
   paths.push(...localizedPaths);
 
-  // console.log();
   return {
     paths,
     fallback: false,

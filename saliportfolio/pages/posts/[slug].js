@@ -18,7 +18,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import BlogSection from "../../components/BlogSection/BlogSection";
 import TheBlog from "../../components/TheBlog/TheBlog";
-import { ScrollLink } from "react-scroll";
+// import { ScrollLink } from "react-scroll";
 
 // import slugify from "slugify";
 
@@ -126,9 +126,12 @@ function PostPage({
     GeneratedTableOfContents
   );
   useEffect(() => {
-    setTableOfContents(GeneratedTableOfContents);
-  }, [GeneratedTableOfContents]);
-//
+    const generatedTableOfContents = generateTableOfContents(
+      PostpagesData?.markdownContent
+    );
+    setTableOfContents(generatedTableOfContents);
+  }, [PostpagesData]);
+  //
   return (
     <div className={styles.PostPageContainer}>
       <div className={styles.container}>
@@ -194,7 +197,7 @@ function PostPage({
                 width={600}
                 height={300}
                 alt=""
-                priority
+                priority={true}
               />
             </motion.div>
 

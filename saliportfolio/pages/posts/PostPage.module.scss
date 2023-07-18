@@ -3,7 +3,7 @@
 
 .container {
   padding: 0; 
-  width: 100%;
+  max-width: 100vw;
   max-width: 600px; 
   margin: 150px auto;
   display: flex;
@@ -63,6 +63,10 @@
 
 .ReactMarkdown {
   margin-bottom: 60px;
+  
+
+ 
+  
 }
 .ReactMarkdown a:hover{
   color: #248bcc;
@@ -168,6 +172,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 4rem 0;
 }
 
@@ -195,7 +200,21 @@ button.disabled {
   .contents {
     display: none;
   }
+  
 }
+@media (max-width: 600px) {
+  
+  .code {
+    font-size: 10px;
+  }
+}
+@media (max-width:480px) {
+  
+  .code {
+    font-size: 7px;
+  }
+}
+
 
 @media (max-width: 500px) {
   .buttons button {

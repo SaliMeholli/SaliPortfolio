@@ -5,7 +5,7 @@ import styles from "./HomePage.module.scss";
 import SocialIcons from "../../components/socialIcons/SocialIcons";
 
 import animationData from "../socialIcons/SocialIcons";
-import SaliImage from "../../public/images/sali.jpeg";
+import SaliImage from "../../public/images/ProfilePicture.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import HtmlLogo from "../../public/images/html.png";
@@ -39,7 +39,7 @@ function HomePage() {
           <div className={styles.HomeContainer}>
             {/* <Lottie options={defaultOptions} height={500} width={500} /> */}
             <div className={styles.ImageContainer}>
-              <Image src={SaliImage} width={300} height={300} alt="" />
+              <Image src={SaliImage} width={500} height={500} alt="" />
             </div>
             <div className={styles.TextContainer}>
               <h1>
@@ -48,7 +48,7 @@ function HomePage() {
               <p>
                 Hi, I&apos;m Sali Meholli.A passionate full-stack developer
                 based in Prishtina, Kosovo.📍
-                <br></br> I create engaging user interfaces and bring designs to
+                 I create engaging user interfaces and bring designs to
                 life. I love exploring new tools and frameworks to stay
                 up-to-date with the frontend landscape.
               </p>

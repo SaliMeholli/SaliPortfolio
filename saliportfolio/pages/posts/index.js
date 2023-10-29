@@ -19,7 +19,7 @@ function posts({ BlogFiles, BlogsContent }) {
     <div className={styles.container}>
       <Navbar />
       <SocialIcons />
-      <LatestBlogs blogs={blogs} lastBlog={lastBlog} />
+      {/* <LatestBlogs blogs={blogs} lastBlog={lastBlog} /> */}
       <Contact />
       <Footer />
     </div>

@@ -53,12 +53,12 @@ function TheBlog({
         )}
 
         {!latest && !lastBlog && (
-          <div className={styles.cards} ref={ref}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
-              transition={{ duration: 0.5 }}
-            >
+          // <div className={styles.cards} ref={ref}>
+            // <motion.div
+            //   initial={{ opacity: 0, scale: 0.8 }}
+            //   animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
+            //   transition={{ duration: 0.5 }}
+            // >
               <div className={styles.card}>
                 <Image
                   src={photo}
@@ -75,8 +75,8 @@ function TheBlog({
                 <h1>{title}</h1>
                 <p>{description}</p>
               </div>
-            </motion.div>
-          </div>
+            /* </motion.div> */
+          // </div>
         )}
       </div>
     </div>

@@ -22,7 +22,7 @@ function Contact() {
       <div>
         
         <p>
-        {/* Don't be shy, reach out and let't connect like two well-commented lines of code! */}
+        Don&apos;t be shy, reach out and let&apos;s connect like two well-commented lines of code!
         </p>
         </div>
         <div className={styles.buttonContainer}>

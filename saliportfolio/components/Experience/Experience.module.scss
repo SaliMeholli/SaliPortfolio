@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 .container {
   height: auto;
-  padding: 100px;
+  padding: 24px;
+  padding: 80px 0;
 //    background-color: #0e4f77;
+// border: 1px solid red;
 }
 
 .container h1{
@@ -13,7 +15,15 @@
 }
 
 
-
+// .vertical-timeline {
+   
+//     max-width: 1348px;
+//     width: 100%;
+// }
+.VerticalTimeline {
+    // border: 1px solid red;
+    max-width: 1348px;
+}
 .vertical-timeline-element {
     display: flex;
     justify-content: center;

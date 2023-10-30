@@ -5,10 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 .container {
-  background-color: #111;
+  // background-color: #111;
   max-width: 100vw;
-  min-height: 100vh;
-  max-height: auto;
+  // min-height: 100vh;
+  // max-height: auto;
+  height:auto;
+  padding: 200px 0 100px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +130,7 @@
   --s: 0.1em;   
   --c: #248bcc; 
   
-  color: white;
+  color: black;
   padding-bottom: var(--s);
   background: 
     linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,

@@ -58,7 +58,7 @@ function HomePage() {
                 <BiLogoCss3 size={40} color="#1572B6" />
                 <BiLogoJavascript size={40} color="#F0DB4F" />
                 <BiLogoReact size={40} color="#61DAFB" />
-                <TbBrandNextjs size={40} color="#fff" />
+                <TbBrandNextjs size={40} color="#000000" />
                 <BiLogoGraphql color="#E10098" size={40} />
               </p>
             </div>

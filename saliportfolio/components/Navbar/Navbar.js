@@ -3,23 +3,23 @@ import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
-      setIsScrolled(scrollPosition >= 100);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.pageYOffset;
+  //     setIsScrolled(scrollPosition >= 100);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
-    <div className={`${styles.container} ${isScrolled ? styles.scrolled : ""}`}>
+    <div className={styles.container} >
       <Link href="/">Home</Link>
       {/* <Link href="#about">About</Link> */}
       <ScrollLink

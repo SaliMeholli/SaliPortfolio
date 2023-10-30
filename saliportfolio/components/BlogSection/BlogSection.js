@@ -4,12 +4,21 @@ import { motion } from "framer-motion";
 import TheBlog from "../TheBlog/TheBlog";
 import Link from "next/link";
 import readingTime from "reading-time";
+import {AiOutlineArrowRight} from 'react-icons/ai';
 function BlogSection({ blogs }) {
   
   return (
     <div className={styles.container}>
-      <h1>Latest Blogs</h1>
+      {/* <h1>Latest Blogs</h1> */}
+      
+    <div className={styles.BlogsContainer}>
+      <div className={styles.BlogsAndMore}>
+        <h1>Blogs</h1>
+        <Link href={`/posts`}>See All Blogs <AiOutlineArrowRight  /></Link>
+      </div>
+      
       <div className={styles.blogs}>
+      
         {blogs.map((item, index) => (
           <Link
             href={`/posts/${item.frontmatter.path}`}
@@ -27,9 +36,10 @@ function BlogSection({ blogs }) {
           </Link>
         ))}
       </div>
-      <Link href="/posts" className={styles.showMoreLink}>
+      </div>
+      {/* <Link href="/posts" className={styles.showMoreLink}>
         Show More
-      </Link>
+      </Link> */}
     </div>
   );
 }

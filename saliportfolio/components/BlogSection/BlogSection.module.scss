@@ -1,16 +1,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 .container {
-    min-height: 80vh;
-    max-height: auto;
+   height: auto;
+    padding: 50px 0 100px 0;
     // margin-top: 150px;
-    background-color: #111;
+    // background-color: #111;
 }
+
+.BlogsContainer {
+  max-width: 1348px;
+  margin: 0 auto;
+}
+.BlogsContainer h1 {
+  margin-left: 24px;
+  color: black;
+
+}
+.BlogsAndMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.BlogsAndMore a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  margin-right: 24px;
+  font-weight: bold;
+  color: blue;
+  align-items: center;
+}
+
 .container h1 {
     // margin-top: 100px;
-    text-align: center;
+    // text-align: center;
     font-family: 'Montserrat', sans-serif;
-    color: #248bcc;
+    color: black;
+    font-weight: bold;
    
 }
 
@@ -23,6 +49,7 @@
     margin: 0 auto;
     // background-color: red;
 }
+
 
 .container .blogs a {
   width: 32%;

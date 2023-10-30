@@ -18,9 +18,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import BlogSection from "../../components/BlogSection/BlogSection";
 import TheBlog from "../../components/TheBlog/TheBlog";
-// import { ScrollLink } from "react-scroll";
 
-// import slugify from "slugify";
 
 function PostPage({
   PostpagesData,
@@ -97,82 +95,15 @@ function PostPage({
 
     code: ({ children }) => <code className={styles.code}>{children}</code>,
   };
-  const generateTableOfContents = (markdownContent) => {
-    const processor = remark();
-    const ast = processor.parse(markdownContent);
-
-    const headings = [];
-
-    const visit = (node, level) => {
-      if (node.type === "heading") {
-        const id = node.data?.id || slugify(node.children?.[0]?.value || "");
-        const text = node.children?.[0]?.value || "";
-        headings.push({ level, id, text });
-      }
-
-      if (node.children) {
-        node.children.forEach((child) => visit(child, level + 1));
-      }
-    };
-
-    ast.children.forEach((node) => visit(node, 1));
-
-    return headings;
-  };
-  const GeneratedTableOfContents = generateTableOfContents(
-    PostpagesData?.markdownContent
-  );
-  const [tableOfContents, setTableOfContents] = useState(
-    GeneratedTableOfContents
-  );
-  useEffect(() => {
-    const generatedTableOfContents = generateTableOfContents(
-      PostpagesData?.markdownContent
-    );
-    setTableOfContents(generatedTableOfContents);
-  }, [PostpagesData]);
-  //
+ 
   return (
     <div className={styles.PostPageContainer}>
       <div className={styles.container}>
         <Navbar />
         <PageProgressIndicator />
-        <div className={styles.contents}>
-          {tableOfContents && tableOfContents.length > 0 && (
-            <>
-              <h5 className={styles.contentTitle}>Contents</h5>
-              <hr className={styles.theLine}></hr>
-              <div className={styles.tocContainer}>
-                {tableOfContents.map((item) => (
-                  <Link
-                    // className={`${styles.link} ${
-                    //   activeLink === item.id ? styles.isActive : ""
-                    // }`}
-                    className={styles.scrollLink}
-                    style={{ marginLeft: `${item.level * 15}px` }}
-                    key={item.id}
-                    href={`#${item.id}`}
-                    // onClick={() => setActiveLink(item.id)}
-                  >
-                    {item.text}
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+       
         <div className={styles.contentContainer}>
-          {/* <div className={styles.tocContainer}>
-          {tableOfContents.map((item) => (
-            <Link
-              style={{ marginLeft: `${item.level * 15}px` }}
-              key={item.id}
-              href={`#${item.id}`}
-            >
-              {item.text}
-            </Link>
-          ))}
-        </div> */}
+        
           <div className={styles.divider}></div>
           <div className={styles.textContent}>
             <motion.div
@@ -354,3 +285,4 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+

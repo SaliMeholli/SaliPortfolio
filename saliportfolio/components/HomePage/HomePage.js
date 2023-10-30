@@ -30,6 +30,7 @@ function HomePage() {
   return (
     <div className={styles.container} ref={ref}>
       <div className={styles.HomeContainer}>
+        
         <SocialIcons />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -37,6 +38,7 @@ function HomePage() {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.HomeContainer}>
+          <div className={styles.Home}>
             {/* <Lottie options={defaultOptions} height={500} width={500} /> */}
             <div className={styles.ImageContainer}>
               <Image src={SaliImage} width={500} height={500} alt="" />
@@ -62,9 +64,11 @@ function HomePage() {
                 <BiLogoGraphql color="#E10098" size={40} />
               </p>
             </div>
+            </div>
           </div>
         </motion.div>
       </div>
+      
     </div>
   );
 }

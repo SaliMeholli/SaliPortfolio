@@ -22,28 +22,39 @@
 .HomeContainer{
     // margin-top: 100px;
    
-    display: flex;
-    // flex-direction: column;
-    justify-content: space-between;
-    flex-direction:row-reverse;
-    align-items: center;
-    // flex-wrap: wrap;
+    
+    
     max-width: 1348px;
+    
     padding: 0;
-    padding: 0 24px;
-    // background-color: red;
-// background-color: #0000;
+   
     
   }
 
-.HomeContainer .ImageContainer img {
-    border-radius: 50%;
+  .Home {
+    display: flex;
+    padding: 0 24px;
+      width: 100%;
+    justify-content: space-between;
+    flex-direction:row-reverse;
+    align-items: center;
+  }
+
+.Home .ImageContainer img {
+    border-radius:80% 20% 78% 22% / 44% 70% 30% 56%  ;
+    transition: border-radius 500ms ease-in-out;
     border: 5px solid #248bcc;
     margin-left: 20px;
     
 }
 
-.HomeContainer p {
+.Home .ImageContainer img:hover {
+  border-radius: 52% 48% 19% 81% / 51% 55% 45% 49%  ;
+ 
+  
+}
+
+.Home p {
     // text-align: center;
     // width: 500px;
     font-family: "Poppins", sans-serif !important;
@@ -51,7 +62,7 @@
     color: rgb(121, 121, 121);
   }
 
-  .HomeContainer h1 {
+  .Home h1 {
     // text-align: center;
     font-family: "Poppins", sans-serif !important;
     font-weight: bold;
@@ -63,7 +74,7 @@
    }
 
    @media(max-width: 500px) {
-    .HomeContainer p {
+    .Home p {
       // text-align: center;
       // width: 300px;
       
@@ -74,11 +85,11 @@
    }
    
   @media (max-width: 768px) {
-    .HomeContainer h1 {
+    .Home h1 {
       text-align: center;
       
     }
-    .HomeContainer p {
+    .Home p {
       width: 100%;
       text-align: center;
     }
@@ -144,7 +155,7 @@
 .TextContainer h1:hover {--_p: 100%}
 
 @media (max-width: 450px) {
-  .HomeContainer {
+  .Home {
     
    padding-top:50px;
    
@@ -156,7 +167,7 @@
   // .HomeContainer {
   //   justify-content: center;
   // }
-  .HomeContainer .ImageContainer img {
+  .Home .ImageContainer img {
     width: 400px;
     height: 400px;
 }
@@ -174,7 +185,7 @@
 }
 
 @media (max-width: 950px) {
-  .HomeContainer {
+  .Home {
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -193,11 +204,14 @@
 }
 
 @media (max-width: 600px) {
-  .HomeContainer {
+  .container {
+    margin-top: 0;
+  }
+  .Home {
     justify-content: center;
     width: 100vw;
   }
-  .HomeContainer .ImageContainer img {
+  .Home .ImageContainer img {
     width: 250px;
     height: 250px;
 }
@@ -211,5 +225,14 @@
     display: flex;
     justify-content: center;
   }
-
+  .Home p {
+    // text-align: center;
+    // width: 500px;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    color: rgb(121, 121, 121);
+  }
+  .Home h1 {
+    font-size: 25;
+  }
 }

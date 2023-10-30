@@ -23,6 +23,7 @@
     font-family: "Poppins", sans-serif !important;
     font-size: 35px;
     color: white;
+    margin: 0 20px;
   }
 
  
@@ -31,6 +32,7 @@
   max-width: 1348px;
   margin: 0 auto;
   padding: 0 24px;
+  // border: 1px solid red;
 }
 
   .container .buttonContainer a.button {
@@ -68,10 +70,43 @@
     .CTA {
       flex-direction: column;
       text-align: center;
+      padding: 40px;
       // padding: 30px 24px;
     }
+    
     .CTA p{
-      font-size: 27px;
+      font-size: 22px;
+      text-align: center;
+    }
+    .container .buttonContainer a.button {
+      display: block;
+      min-width: 230px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 20px;
+   
+      font-family: "Poppins", sans-serif !important;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    
+    
+    .CTA p{
+      font-size: 18px;
+      text-align: center;
+    }
+    .container .buttonContainer a.button {
+      display: block;
+      min-width: 230px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 20px;
+      font-size: 18px;
+      font-family: "Poppins", sans-serif !important;
       text-align: center;
     }
   }

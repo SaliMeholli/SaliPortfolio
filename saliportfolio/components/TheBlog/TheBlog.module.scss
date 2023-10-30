@@ -18,16 +18,16 @@
 
     border-radius: 5px;
     transition: color 0.15s ease, border-color 0.15s ease;
-
+background-color: transparent;
   height: auto;
   min-height: 500px;
    text-align: center;
    color: white;
   transition: box-shadow .3s;
   // background-color: #e9e9e9;
-  box-shadow: 0px 3px 20px 2px rgba(0, 0, 0, 0.05);
-  transform: scale(1.009);
-  transition: all .2s;
+  // box-shadow: 0px 3px 20px 2px rgba(0, 0, 0, 0.05);
+  // transform: scale(1.009);
+  // transition: all .2s;
   }
   .card img {
     width: 100%;
@@ -42,14 +42,14 @@
 
     box-shadow: 0px 3px 20px 2px rgba(0, 0, 0, 0.05);
     transform: scale(1.030);
-    transition: all .2s;
+    transition: all .3s;
   }
   
   .card h1 {
     font-size: 26px;
     text-align: left;
     margin-left: 10px;
-    margin-right: 10px;
+    // margin-right: 10px;
     font-family: "Poppins", sans-serif !important;
     color: #15171a;
     margin-top: 0;
@@ -210,7 +210,8 @@
       flex-direction: column;
     }
     .card {
-      margin: 1rem;
+      margin: 0 auto;
+      // margin: 1rem;
       // padding: 1.5rem;
       text-align: left;
       color: inherit;
@@ -218,8 +219,8 @@
       // border: 1px solid #eaeaea;
       // border-radius: 10px;
       transition: color 0.15s ease, border-color 0.15s ease;
-     width: 300px;
-     min-height:350px;
+    //  width: 300px;
+    //  min-height:350px;
      max-height: auto;
      text-align: center;
      

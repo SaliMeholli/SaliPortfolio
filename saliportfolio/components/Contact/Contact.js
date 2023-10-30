@@ -13,6 +13,7 @@ function Contact() {
   });
   return (
     <div className={styles.container} ref={ref}>
+      <div className={styles.CTAcontainer}>
       <div className={styles.CTA} >
       {/* <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -32,6 +33,7 @@ function Contact() {
           </a>
         </div>
       {/* </motion.div> */}
+      </div>
       </div>
     </div>
   );

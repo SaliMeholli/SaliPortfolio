@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 24px;
+    // margin: 0 24px;
   }
   
   .container h1 {
@@ -27,7 +27,11 @@
 
  
 
-
+.CTAcontainer {
+  max-width: 1348px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
   .container .buttonContainer a.button {
     display: block;
@@ -48,32 +52,23 @@
   .CTA {
     font-family: "Montserrat", sans-serif;
     width: 100%;
-    max-width: 1348px;
+    // max-width: 1348px;
     background-color: #248bcc;
     border-radius: 25px;
     display: flex;
     align-items: center;
     padding: 58px;
-    margin: 0 24px;
+    // margin: 0 24px;
   }
 
 
-  @media (max-width: 1000px) {
-    .container {
-      margin: 0 24px;
-      
-    }
-    .CTA {
-      margin: 0 24px;
-    }
-  }
 
   @media (max-width: 900px) {
     
     .CTA {
       flex-direction: column;
       text-align: center;
-      padding: 30px 24px;
+      // padding: 30px 24px;
     }
     .CTA p{
       font-size: 27px;

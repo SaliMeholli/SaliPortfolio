@@ -1,6 +1,6 @@
 ---
 path: Post3
-description: Intersection Observer is a web-based API that enables developers to detect when a specific element intersects with another element or the viewport.You can use this API to monitor any changes in the visibility of an element as it intersects with another element, or exits / enters the viewport.
+description: Intersection Observer is a web-based API that enables developers to detect when a specific element intersects with another element or the viewport.
 title:  Reveal on Scroll with Intersection Observer
 image: /images/react-intersection-observer.png
 date: 07.04.2023

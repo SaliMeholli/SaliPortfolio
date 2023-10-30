@@ -1,6 +1,6 @@
 ---
 path: Markdown-Explanation
-description: Markdown can be defined as a plain text formatting syntax used to write content on the web. It’s commonly used by writers and programmers to write quickly without having to take time using the formatting toolbar of text editors.
+description: Markdown can be defined as a plain text formatting syntax used to write content on the web.
 title: What is Markdown & How It Can Help You Write Faster?
 image: /images/markdownlogo.png
 date: 14.05.2023

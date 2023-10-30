@@ -1,7 +1,7 @@
 ---
 path: SSG-SSR
 
-description: NextJs is a framework built on ReactJs, used for improving page performance and overall user experience. The problem NextJs solves is related to the nature of single page applications (SPAs), and how they render in the browser.
+description: NextJs is a framework built on ReactJs, used for improving page performance and overall user experience.
 title: ServerSide vs Static Props
 image: /images/ssr.webp
 date: 10.05.2023

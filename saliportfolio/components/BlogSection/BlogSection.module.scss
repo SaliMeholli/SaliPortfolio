@@ -82,12 +82,23 @@
        flex-direction: column;
     }
     .container .blogs a {
-      width: 50%;
+      width: 100%;
       margin: 30px auto;
     }
   }
 
   @media (max-width: 600px) {
+    .BlogsAndMore a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8em;
+      margin-right: 24px;
+      font-weight: bold;
+      color: blue;
+      align-items: center;
+    }
+    .BlogsAndMore h1 {
+      font-size: 1.2em;
+    }
     
     .container .blogs a {
       width: 100%;

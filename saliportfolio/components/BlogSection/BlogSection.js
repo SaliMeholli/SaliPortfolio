@@ -5,6 +5,13 @@ import TheBlog from "../TheBlog/TheBlog";
 import Link from "next/link";
 import readingTime from "reading-time";
 import {AiOutlineArrowRight} from 'react-icons/ai';
+import {Poppins} from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100'],
+});
+
 function BlogSection({ blogs }) {
   
   return (
@@ -13,8 +20,8 @@ function BlogSection({ blogs }) {
       
     <div className={styles.BlogsContainer}>
       <div className={styles.BlogsAndMore}>
-        <h1>Blogs</h1>
-        <Link href={`/posts`}>See All Blogs <AiOutlineArrowRight  /></Link>
+        <h1 className={poppins.className}>Blogs</h1>
+        <Link href={`/posts`} className={poppins.className}>See All Blogs <AiOutlineArrowRight  /></Link>
       </div>
       
       <div className={styles.blogs}>

@@ -13,8 +13,8 @@ import Experience from "../components/Experience/Experience";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import BlogSection from "../components/BlogSection/BlogSection";
-
-export default function Home({ BlogsContent }) {
+import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
+export default function Home({ BlogsContent, ProjectsContent }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -24,9 +24,9 @@ export default function Home({ BlogsContent }) {
       </Head>
       <Navbar />
       <HomePage />
-
+      <ProjectsSection projects={ProjectsContent}/>
       <Experience />
-
+    
       <Contact />
       <BlogSection blogs={BlogsContent} />
       <Footer />
@@ -51,9 +51,28 @@ export async function getStaticProps() {
     };
   }).slice(0, 3);
 
+  const ProjectsFiles = fs.readdirSync(path.join("content/projects"));
+  const ProjectsContent = ProjectsFiles.map((ProjectFilename) => {
+    const markDownProject = fs.readFileSync(
+      path.join("content/projects", ProjectFilename),
+      "utf-8"
+    );
+    const { data: frontmatter, content: markdownContent } =
+      matter(markDownProject);
+
+    return {
+      frontmatter,
+      markdownContent,
+    };
+  });
+
+  // console.log(ProjectsContent);
+
+
   return {
     props: {
       BlogsContent,
+      ProjectsContent
     },
   };
 }

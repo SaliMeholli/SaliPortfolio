@@ -6,11 +6,18 @@ import { useInView } from "react-intersection-observer";
 import { CiLocationOn } from "react-icons/ci";
 import { IoMailOpenOutline } from "react-icons/io5";
 import {AiOutlineArrowRight} from 'react-icons/ai';
+import {Poppins} from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: false,
     rootMargin: "-100px 0px",
   });
+  
   return (
     <div className={styles.container} ref={ref}>
       <div className={styles.CTAcontainer}>
@@ -22,13 +29,14 @@ function Contact() {
       > */}
       <div>
         
-        <p>
+        <p className={poppins.className}>
         Don&apos;t be shy, reach out and let&apos;s connect like two well-commented lines of code!
         </p>
         </div>
         <div className={styles.buttonContainer}>
           <a href="mailto:salidev.ks@gmail.com" className={styles.button}>
-            Hit me up
+            <span className={poppins.className}>Hit me up</span>
+            
             <AiOutlineArrowRight className={styles.arrow} />
           </a>
         </div>

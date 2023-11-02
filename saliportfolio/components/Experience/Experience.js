@@ -11,6 +11,13 @@ import CentralLogo from "../../public/images/central-logo.svg";
 import UbtLogo from "../../public/images/ubt-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import {Montserrat} from 'next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300'],
+});
+
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -19,7 +26,7 @@ const ExperienceCard = ({ experience }) => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: "#eaeaea", color: "#248bcc" }}
         contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-        date="02.2023 - present"
+        date="02.2023 - 11.2023"
         dateClassName={styles.dateClassName}
         iconStyle={{
           background: "#248bcc",
@@ -58,7 +65,7 @@ const ExperienceCard = ({ experience }) => {
 function Experience() {
   return (
     <div className={styles.container} id="experience">
-      <h1>Experience and Education</h1>
+      <h1 className={montserrat.className}>Experience and Education</h1>
 
       <motion.div>
         <ExperienceCard />

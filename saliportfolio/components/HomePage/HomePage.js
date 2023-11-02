@@ -21,6 +21,13 @@ import {
 } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 // import { Particles } from "../Particles/Particles"; //
+import {Poppins} from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
 function HomePage() {
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -44,10 +51,10 @@ function HomePage() {
               <Image src={SaliImage} width={500} height={500} alt="" />
             </div>
             <div className={styles.TextContainer}>
-              <h1>
+              <h1 className={poppins.className}>
                 I am a <span>fullstack developer</span>
               </h1>
-              <p>
+              <p className={poppins.className}>
                 Hi, I&apos;m Sali Meholli.A passionate full-stack developer
                 based in Prishtina, Kosovo.📍
                  I create engaging user interfaces and bring designs to
@@ -55,7 +62,7 @@ function HomePage() {
                 up-to-date with the frontend landscape.
               </p>
 
-              <p className={styles.TechIcons}>
+              <p className={styles.TechIcons} >
                 TechStack: <AiFillHtml5 size={40} color="#E34F26" />
                 <BiLogoCss3 size={40} color="#1572B6" />
                 <BiLogoJavascript size={40} color="#F0DB4F" />

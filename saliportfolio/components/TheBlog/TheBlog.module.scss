@@ -48,9 +48,9 @@ background-color: transparent;
   .card h1 {
     font-size: 26px;
     text-align: left;
-    // margin-left: 10px;
+    margin-left: 10px;
     // margin-right: 10px;
-    font-family: "Poppins", sans-serif !important;
+    // font-family: "Poppins", sans-serif !important;
     color: #15171a;
     margin-top: 0;
   }
@@ -61,7 +61,7 @@ background-color: transparent;
     line-height: 1.5;
     margin: 0 10px 0px 10px;
     text-align: left;
-    font-family: "Poppins", sans-serif !important;
+    // font-family: "Poppins", sans-serif !important;
     max-height: 150px; 
     color: #000;
   }
@@ -73,7 +73,7 @@ background-color: transparent;
 
   .readTime {
     color: #738a94;
-    font-family: "Poppins", sans-serif !important;
+    // font-family: "Poppins", sans-serif !important;
   }
 
   .card div {
@@ -82,7 +82,7 @@ background-color: transparent;
   }
   .card .Date {
     color: #738a94;
-    font-family: "Poppins", sans-serif !important;
+    // font-family: "Poppins", sans-serif !important;
   }
   .lastBlog {
    
@@ -116,7 +116,7 @@ background-color: transparent;
 
   @media (max-width: 650px) {
     .lastBlog img{
-      height: 200px;
+      height: 500px;
       width: 300px;
     }
 

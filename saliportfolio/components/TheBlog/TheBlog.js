@@ -4,6 +4,16 @@ import styles from "./TheBlog.module.scss";
 // import photo from "../../public/images/photo1.webp";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import {Poppins} from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+const poppinsBold = Poppins({
+  subsets: ['latin-ext'],
+  weight: [ '600'],
+});
 function TheBlog({
   title,
   description,
@@ -41,7 +51,7 @@ function TheBlog({
               />
             </div>
             <div>
-              <h1>{title}</h1>
+              <h1 >{title}</h1>
               <p>{description}</p>
               <div className={styles.datetime}>
                 <p className={styles.readTime}>{readTime} MIN READ</p>
@@ -69,11 +79,11 @@ function TheBlog({
                   // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw, 300px"
                 />
                 <div>
-                  <p className={styles.readTime}>{readTime} MIN READ</p>
-                  <p className={styles.Date}>{date}</p>
+                  <p className={styles.readTime} ><span className={poppins.className}>{readTime} MIN READ</span></p>
+                  <p className={styles.Date}><span className={poppins.className}>{date}</span></p>
                 </div>
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <h1 className={styles.blogTitle} ><span className={poppinsBold.className}>{title}</span></h1>
+                <p className={styles.blogDescription}><span className={poppins.className}>{description}</span></p>
               </div>
             /* </motion.div> */
           // </div>

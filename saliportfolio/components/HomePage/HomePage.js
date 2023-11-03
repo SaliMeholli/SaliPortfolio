@@ -22,6 +22,8 @@ import {
 import { TbBrandNextjs } from "react-icons/tb";
 // import { Particles } from "../Particles/Particles"; //
 import {Poppins} from 'next/font/google';
+import CTAButtton from "../Contact/CTAButtton";
+import TechStack from "../TechStack/TechStack";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -61,15 +63,9 @@ function HomePage() {
                 life. I love exploring new tools and frameworks to stay
                 up-to-date with the frontend landscape.
               </p>
-
-              <p className={styles.TechIcons} >
-                TechStack: <AiFillHtml5 size={40} color="#E34F26" />
-                <BiLogoCss3 size={40} color="#1572B6" />
-                <BiLogoJavascript size={40} color="#F0DB4F" />
-                <BiLogoReact size={40} color="#61DAFB" />
-                <TbBrandNextjs size={40} color="#000000" />
-                <BiLogoGraphql color="#E10098" size={40} />
-              </p>
+              <CTAButtton background="#248bcc" color="white"/>
+             
+              
             </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoMailOpenOutline } from "react-icons/io5";
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import {Poppins} from 'next/font/google';
+import CTAButtton from "./CTAButtton";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -33,13 +34,7 @@ function Contact() {
         Don&apos;t be shy, reach out and let&apos;s connect like two well-commented lines of code!
         </p>
         </div>
-        <div className={styles.buttonContainer}>
-          <a href="mailto:salidev.ks@gmail.com" className={styles.button}>
-            <span className={poppins.className}>Hit me up</span>
-            
-            <AiOutlineArrowRight className={styles.arrow} />
-          </a>
-        </div>
+       <CTAButtton background="white" color="black"/>
       {/* </motion.div> */}
       </div>
       </div>

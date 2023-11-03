@@ -3,7 +3,7 @@ path: SSG-SSR
 
 description: Reservix transformed an MVP into a profitable video streaming platform for some of the 7000+ organizers from its client base who couldn’t host events during the pandemic.
 title: Organizers streamed 200+ shows on Reservix's new video platform
-image: /images/ssr.webp
+image: /images/pensionkasse.jpeg
 date: 10.05.2023
 ---
 

@@ -2,7 +2,7 @@
 path: Post3
 description: Implementing a ready-made cloud platform and a no-commission payment gateway earned the bank a SEPA certificate needed for international transfers.
 title:  One bank now reaches 36+ countries after moving to the cloud
-image: /images/react-intersection-observer.png
+image: /images/digitalsyv.jpeg
 date: 07.04.2023
 ---
 

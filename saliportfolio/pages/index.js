@@ -14,6 +14,7 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import BlogSection from "../components/BlogSection/BlogSection";
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
+import TechStack from "../components/TechStack/TechStack";
 export default function Home({ BlogsContent, ProjectsContent }) {
   return (
     <div className={styles.container}>
@@ -25,6 +26,8 @@ export default function Home({ BlogsContent, ProjectsContent }) {
       <Navbar />
       <HomePage />
       <ProjectsSection projects={ProjectsContent}/>
+      <TechStack />
+      
       <Experience />
     
       <Contact />

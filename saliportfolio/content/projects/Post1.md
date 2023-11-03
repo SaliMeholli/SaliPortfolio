@@ -4,7 +4,7 @@ description: Pet Media Group centralized the management of 6 pet marketplaces wo
 
 
 title: Creating one platform to manage 6 sites led to a 400% revenue growth
-image: /images/markdownlogo.png
+image: /images/poacher.jpeg
 date: 14.05.2023
 ---
 

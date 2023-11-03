@@ -7,15 +7,25 @@ import readingTime from "reading-time";
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import TheProject from "../TheProject/TheProject";
 import Image from "next/image";
+import {Poppins} from 'next/font/google';
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+const poppinsBold = Poppins({
+  subsets: ['latin'],
+  weight: ['500'],
+});
 function ProjectsSection({projects}) {
   
   return (
     <div className={styles.container}>
-        <div className={styles.title}>
-    <h1>Projects</h1>
-    </div>
-      
+       
       <div className={styles.projects}>
+      <div className={styles.title}>
+    <h1 className={poppins.className}>Projects</h1>
+    <p className={poppins.className}>Each project is a unique piece of development 🧩</p>
+    </div>
       
         {projects.map((item, index) => (
           <Link
@@ -37,18 +47,18 @@ function ProjectsSection({projects}) {
         src={item.frontmatter.image}
         width={600}
                 height={300}
-                style={{ objectFit: "cover" }}
+                // style={{ objectFit: "cover" }}
                 
                 alt=" "
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                // priority
+                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div>
-                <h1>{item.frontmatter.title}</h1>
-              <p>{item.frontmatter.description}</p>
+                <div className={styles.projectText}>
+                <h1 className={poppinsBold.className}>{item.frontmatter.title}</h1>
+              <p className={poppins.className}>{item.frontmatter.description}</p>
               <div className={styles.CODEandWEB}>
-                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}>Code</Link>
-                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}>Live Demo</Link>
+                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Code</span></Link>
+                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Live Demo</span></Link>
               </div>
                 </div>
 

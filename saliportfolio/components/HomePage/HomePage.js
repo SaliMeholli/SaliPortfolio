@@ -40,12 +40,12 @@ function HomePage() {
     <div className={styles.container} ref={ref}>
       <div className={styles.HomeContainer}>
         
-        <SocialIcons />
-        <motion.div
+        {/* <SocialIcons /> */}
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
           transition={{ duration: 0.5 }}
-        >
+        > */}
           <div className={styles.HomeContainer}>
           <div className={styles.Home}>
             {/* <Lottie options={defaultOptions} height={500} width={500} /> */}
@@ -69,7 +69,7 @@ function HomePage() {
             </div>
             </div>
           </div>
-        </motion.div>
+        {/* </motion.div> */}
       </div>
       
     </div>

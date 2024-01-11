@@ -4,12 +4,15 @@
 .container {
   padding: 0; 
   max-width: 100vw;
-  max-width: 600px; 
+  max-width: 700px; 
   margin: 150px auto;
   display: flex;
   justify-content: center;
+  // background-color: red;
 }
-
+.code {
+  max-width: 100%;
+}
 .main {
   min-height: 100vh; 
   padding: 2rem 1rem; 
@@ -20,23 +23,39 @@
 }
 
 .textContent {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   align-items: center;
   padding: 20px;
   text-align: left;
-  color: white;
+  // color: white;
   // margin-left: 100px;
 }
+
 
 .textContent h1 {
   text-align: left;
   font-family: 'Poppins';
   letter-spacing: 2px;
+  // margin-top: 150px;
+  font-size: 35px;
+  color: #248bcc;
+}
+@media (max-width: 750px) {
+  .textContent h1 {
+    text-align: left;
+    font-family: 'Poppins';
+    letter-spacing: 2px;
+    // margin-top: 150px;
+    font-size: 25px;
+    text-align: center;
+    color: #248bcc;
+  }
 }
 .textContent a {
   text-align: left;
   font-family: 'Poppins';
+  // margin-top: 50px;
 }
 .textContent p {
   text-align: left;
@@ -47,26 +66,122 @@
 
 @media (max-width: 620px) {
   .textContent img {
-  width: 450px;
+  width: 100%;
   height: 350px;
 }
 }
 
 @media (max-width: 500px) {
   .textContent img {
-  width: 310px;
+  width: 100%;
   height: 250px;
 }
 }
 
-
+.titleandimage {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
 
 .ReactMarkdown {
   margin-bottom: 60px;
+  max-width: 100%;
+  // background-color: red;
   
+}
+@media (max-width: 725px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 500px;
+  
+   
+    
+  }
+}
+@media (max-width: 531px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 450px;
+  
+   
+    
+  }
+}
 
- 
+@media (max-width: 500px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 400px;
   
+   
+    
+  }
+}
+@media (max-width: 440px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 390px;
+  
+   
+    
+  }
+}
+
+@media (max-width: 400px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 350px;
+  
+   
+    
+  }
+}
+@media (max-width: 380px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 320px;
+  
+   
+    
+  }
+}
+
+
+
+@media (max-width: 300px) {
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: 240px;
+  
+   
+    
+  }
+}
+.ReactMarkdown a {
+  font-size: 30px;
+}
+
+.ReactMarkdown p {
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+@media (max-width: 450px) {
+  .ReactMarkdown a {
+    font-size: 20px;
+  }
+  .ReactMarkdown p {
+    margin-bottom: 50px;
+    font-size: 12px;
+  }
+  .ReactMarkdown {
+    margin-bottom: 60px;
+    max-width: auto;
+  
+   
+    
+  }
 }
 .ReactMarkdown a:hover{
   color: #248bcc;
@@ -93,9 +208,16 @@
 }
 
 .readTimeDate p{
-  margin: 10px 10px;
+  // margin: 10px 10px 10px 10px;
   font-size: 18px;
   // color: #009dffc0;
+  
+}
+.readTimeDate p:nth-child(2){
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+  // color: #009dffc0;
+  
 }
 
 .textContent .arrow a {
@@ -223,4 +345,6 @@ button.disabled {
     
   }
 }
+
+
 

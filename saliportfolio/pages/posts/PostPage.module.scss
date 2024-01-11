@@ -35,7 +35,7 @@
 
 .textContent h1 {
   text-align: left;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
   // margin-top: 150px;
   font-size: 35px;
@@ -44,7 +44,7 @@
 @media (max-width: 750px) {
   .textContent h1 {
     text-align: left;
-    font-family: 'Poppins';
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     // margin-top: 150px;
     font-size: 25px;
@@ -54,7 +54,7 @@
 }
 .textContent a {
   text-align: left;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
   // margin-top: 50px;
 }
 .textContent p {
@@ -162,7 +162,7 @@
 }
 .ReactMarkdown a {
   font-size: 30px;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
 }
 
 .ReactMarkdown p {
@@ -288,7 +288,7 @@
 
 .contentTitle {
   color: white;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
   // text-align: center;
 }
 
@@ -307,7 +307,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   color: #479dd5;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
 }
 
 button.disabled {

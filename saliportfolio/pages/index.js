@@ -15,6 +15,7 @@ import Footer from "../components/Footer/Footer";
 import BlogSection from "../components/BlogSection/BlogSection";
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
 import TechStack from "../components/TechStack/TechStack";
+
 export default function Home({ BlogsContent, ProjectsContent }) {
   return (
     <div className={styles.container}>

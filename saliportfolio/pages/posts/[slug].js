@@ -108,20 +108,26 @@ function PostPage({
 
     code: ({ node, inline, className, children, ...props }) => {
       const match = /language-(\w+)/.exec(className || '');
-      return !inline && match ? (
-        <SyntaxHighlighter
-          style={customCodeStyle}
-          language={match[1]}
-          PreTag="div"
-          children={String(children).replace(/\n$/, '')}
-          {...props}
-        />
-      ) : (
-        <code className={styles.code} {...props}>
-          {children}
-        </code>
-      );
+      if (!inline && match) {
+        return (
+          <SyntaxHighlighter
+            style={customCodeStyle}
+            language={match[1]}
+            PreTag="div"
+            {...props}
+          >
+            {String(children).replace(/\n$/, '')}
+          </SyntaxHighlighter>
+        );
+      } else {
+        return (
+          <code className={styles.code} {...props}>
+            {children}
+          </code>
+        );
+      }
     },
+    
   };
 
   return (

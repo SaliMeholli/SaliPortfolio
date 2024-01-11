@@ -21,9 +21,22 @@ a {
   /* background-color: black; */
 }
 
-code {
+/* code {
   color: red;
-  /* background-color: rgb(220, 220, 220); */
-  width: 600px;
-  /* overflow-x: auto; */
+   background-color: rgb(220, 220, 220); 
+  width: 600px; 
+  overflow-x: auto;
+} */
+
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .code {
+    font-size: 12px;
+    padding: 2px;
+  }
+}
+
+
+pre div{
+  padding: 0;
 }

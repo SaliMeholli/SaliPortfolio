@@ -67,9 +67,9 @@ function Experience() {
     <div className={styles.container} id="experience">
       <h1 className={montserrat.className}>Experience and Education</h1>
 
-      <motion.div>
+      {/* <motion.div> */}
         <ExperienceCard />
-      </motion.div>
+      {/* </motion.div> */}
     </div>
   );
 }

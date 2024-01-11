@@ -1,6 +1,6 @@
-import { React, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import styles from "./PostPage.module.scss";
+import styles from './PostPage.module.scss';
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -18,6 +18,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import LatestBlogs from "../../components/LatestBlogs/LatestBlogs";
 import BlogSection from "../../components/BlogSection/BlogSection";
 import TheBlog from "../../components/TheBlog/TheBlog";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 
 
 function PostPage({
@@ -54,7 +57,16 @@ function PostPage({
   };
   const recentBlogs = getBlogPosts(BlogsContent);
   const blogs = getBlogPosts(BlogsContent);
+  const customCodeStyle = {
+    ...atomDark,
+    lineHeight: '1.4',
+  padding: '10px',
+  overflowX: 'auto', // Enable horizontal scrolling on smaller screens
+  whiteSpace: 'pre-wrap', // Allow the code to wrap
+  maxWidth: '100%', // Mak 
+  };
   const components = {
+ 
     h1: (props) => (
       <h1
         {...props}
@@ -92,26 +104,43 @@ function PostPage({
         <a href={`#${slugify(props.children)}`}>{props.children}</a>
       </h3>
     ),
+    
 
-    code: ({ children }) => <code className={styles.code}>{children}</code>,
+    code: ({ node, inline, className, children, ...props }) => {
+      const match = /language-(\w+)/.exec(className || '');
+      return !inline && match ? (
+        <SyntaxHighlighter
+          style={customCodeStyle}
+          language={match[1]}
+          PreTag="div"
+          children={String(children).replace(/\n$/, '')}
+          {...props}
+        />
+      ) : (
+        <code className={styles.code} {...props}>
+          {children}
+        </code>
+      );
+    },
   };
- 
+
   return (
     <div className={styles.PostPageContainer}>
       <div className={styles.container}>
         <Navbar />
         <PageProgressIndicator />
-       
+
         <div className={styles.contentContainer}>
-        
           <div className={styles.divider}></div>
           <div className={styles.textContent}>
+            
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.5 }} // Add delay based on index
             >
+              <div className={styles.titleandimage}>
               <div className={styles.arrow}>
                 <Link href="/posts">
                   <FaArrowLeft size={15} />
@@ -130,7 +159,9 @@ function PostPage({
                 alt=""
                 priority={true}
               />
+              </div>
             </motion.div>
+            
 
             <div className={styles.ReactMarkdown}>
               <motion.div
@@ -170,7 +201,7 @@ function PostPage({
             </Link> */}
         </div>
       </div>
-      <div className={styles.relatedBlogs}>
+      {/* <div className={styles.relatedBlogs}>
         <h1>Related Blogs</h1>
         <div className={styles.relatedCards}>
           {recentBlogs.map((item) => {
@@ -187,7 +218,7 @@ function PostPage({
             );
           })}
         </div>
-      </div>
+      </div> */}
       {/* <Contact /> */}
       <Footer />
     </div>
@@ -285,4 +316,3 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-

@@ -5,7 +5,11 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 
 import {Montserrat} from 'next/font/google';
-
+import {Poppins} from 'next/font/google';
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['200'],
+});
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300'],
@@ -30,7 +34,7 @@ function Navbar() {
 
   return (
     <div className={styles.container} >
-      <Link href="/" className={montserrat.className}>Home</Link>
+      <Link href="/" className={poppins.className}>Home</Link>
       {/* <Link href="#about">About</Link> */}
       <ScrollLink
         to="experience"
@@ -38,11 +42,11 @@ function Navbar() {
         smooth={true}
         offset={-70}
         duration={500}
-        className={montserrat.className}
+        className={poppins.className}
       >
         Experience
       </ScrollLink>
-      <Link href="/posts" className={montserrat.className}>Posts</Link>
+      <Link href="/posts" className={poppins.className}>Posts</Link>
     </div>
   );
 }

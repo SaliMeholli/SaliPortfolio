@@ -6,6 +6,8 @@ import Link from "next/link";
 import readingTime from "reading-time";
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import TheProject from "../TheProject/TheProject";
+import Github from '../../public/images/github.png';
+import LiveDemo from '../../public/images/livedemo.png';
 import Image from "next/image";
 import {Poppins} from 'next/font/google';
 const poppins = Poppins({
@@ -57,8 +59,9 @@ function ProjectsSection({projects}) {
                 <h1 className={poppinsBold.className}>{item.frontmatter.title}</h1>
               <p className={poppins.className}>{item.frontmatter.description}</p>
               <div className={styles.CODEandWEB}>
-                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Code</span></Link>
-                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Live Demo</span></Link>
+               
+                {/* <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Code <Image src={Github} width={32} height={32} /></span></Link>
+                <Link href={`/projects/${item.frontmatter.path}`} className={styles.LearnMore}><span className={poppins.className}>Code <Image src={LiveDemo} width={32} height={32}/></span></Link> */}
               </div>
                 </div>
 

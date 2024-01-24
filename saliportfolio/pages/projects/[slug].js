@@ -133,7 +133,7 @@ export async function getStaticProps({ params }) {
       matter(markDownProject);
 
     return {
-      frontmatter,
+      frontmatter, 
       markdownContent,
     };
   });

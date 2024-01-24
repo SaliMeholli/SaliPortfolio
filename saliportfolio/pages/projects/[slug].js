@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import styles from "../../components/PostsPage/PostsPage.module.scss";
+import styles from '../projects/ProjectPage.module.scss';
 import TheBlog from "../../components/TheBlog/TheBlog";
 import fs from "fs";
 import path from "path";
@@ -13,8 +13,8 @@ import SocialIcons from "../../components/socialIcons/SocialIcons";
 import Footer from "../../components/Footer/Footer";
 import Contact from "../../components/Contact/Contact";
 import ReactMarkdown from "react-markdown";
-function posts({ PostpagesData, ProjectsContentContent, ReadingTime, next, previous }) {
-  console.log(PostpagesData)
+function posts({ ProjectpagesData, ProjectsContent, ReadingTime, next, previous }) {
+
   const slugify = (text) => {
     return text
       .toString()
@@ -69,9 +69,21 @@ function posts({ PostpagesData, ProjectsContentContent, ReadingTime, next, previ
   return (
     <div className={styles.container}>
       <Navbar />
-      <ReactMarkdown components={components}>
-                  {PostpagesData?.markdownContent}
+      {/* <ReactMarkdown components={components}>
+                  {ProjectpagesData?.markdownContent}
                 </ReactMarkdown>
+                 */}
+     <div className={styles.ProjectBanner}>
+  <div className={styles.overlay}></div>
+  <div className={styles.textContent}>
+  <h1>{ProjectpagesData?.frontmatter?.title}</h1>
+  <p>{ProjectpagesData?.frontmatter?.description}</p>
+  </div>
+  
+  <Image src={ProjectpagesData.frontmatter.image} fill className={styles.BannerImage} />
+  
+</div>
+
       <Contact />
       <Footer />
     </div>
@@ -126,11 +138,11 @@ export async function getStaticProps({ params }) {
     };
   });
 
-  const PostpagesData = ProjectsContent.find(
-    (Postpage) => Postpage.frontmatter.path === slug
+  const ProjectpagesData = ProjectsContent.find(
+    (Projectpage) => Projectpage.frontmatter.path === slug
   );
   const ReadingTime =
-    Math.round(readingTime(PostpagesData.markdownContent).minutes) || 1;
+    Math.round(readingTime(ProjectpagesData.markdownContent).minutes) || 1;
   const currentPostIndex = ProjectsContent.findIndex(
     (p) => p.frontmatter.path === slug
   );
@@ -144,7 +156,7 @@ export async function getStaticProps({ params }) {
     props: {
       previous,
       next,
-      PostpagesData,
+      ProjectpagesData,
       ProjectsContent,
       ReadingTime,
     },

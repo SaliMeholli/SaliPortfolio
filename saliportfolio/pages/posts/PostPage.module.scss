@@ -163,6 +163,7 @@
 .ReactMarkdown a {
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 .ReactMarkdown p {
@@ -307,7 +308,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   color: #479dd5;
-  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
 }
 
 button.disabled {

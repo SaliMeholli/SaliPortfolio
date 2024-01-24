@@ -5,23 +5,51 @@ title:  One bank now reaches 36+ countries after moving to the cloud
 image: /images/pensionkasse.jpeg
 date: 07.04.2023
 ---
+# My Cool Project
 
-# What is React Intersection Observer
+## Overview
 
-Welcome to my portfolio page! Here, I showcase my work, projects, and skills. Feel free to explore and learn more about what I can offer.
+My Cool Project is an innovative web application that aims to simplify task management and boost productivity. It provides a user-friendly interface and powerful features to help individuals and teams stay organized.
 
-## How the Intersection Observer API Works
+## Features
 
-Let's break this down the React Intersection Observer API works in a way that it detects an intersection and tells the code what to do next.
+1. **Task Management:** Create, edit, and organize tasks effortlessly.
+2. **Collaboration:** Invite team members and collaborate on shared projects.
+3. **Reminders:** Set reminders for important deadlines and events.
+4. **Calendar Integration:** Sync tasks with your favorite calendar applications.
+5. **Mobile Accessibility:** Access your tasks on the go with our mobile app.
 
-## Portability and Platform Independence
+## Technologies Used
 
-One of Markdown's most significant advantages is its platform independence. Markdown files are plain text files that can be opened and edited using any text editor, making them highly portable across different operating systems and devices. Whether you're working on a Windows, macOS, or Linux machine, Markdown remains consistent and compatible. This flexibility ensures seamless collaboration and eliminates the hassle of formatting discrepancies when sharing files between team members or across different platforms.
+- Frontend: React.js
+- Backend: Node.js, Express
+- Database: MongoDB
+- Authentication: JWT
+- Styling: CSS-in-JS (Styled Components)
+- Deployment: Heroku
 
-## Readability and Accessibility
+## Setup Instructions
 
-Markdown focuses on the content itself, enhancing readability and accessibility for both content creators and readers. By adopting a clean and uncluttered format, Markdown allows you to concentrate on the core message without distractions. Additionally, since Markdown files are human-readable, they can be easily version-controlled, compared, and merged using tools like Git. This feature is particularly valuable when collaborating with a team, as it facilitates efficient content review and revision processes.
+1. Clone the repository: `git clone https://github.com/your-username/my-cool-project.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
 
-## Versatility and Extensibility
+## Screenshots
 
-Markdown's simplicity doesn't limit its functionality. While Markdown offers a core set of features, it also supports extensions and customizations to suit specific project requirements. Depending on your needs, you can incorporate advanced features such as tables, footnotes, mathematical equations, syntax highlighting, and even diagrams by using popular Markdown extensions or flavors like GitHub Flavored Markdown (GFM) or CommonMark. This versatility ensures that Markdown can adapt to a wide range of project types, from technical documentation to blog posts and even static websites.
+![Dashboard](./screenshots/dashboard.png)
+*Dashboard view of My Cool Project.*
+
+![Task List](./screenshots/task-list.png)
+*Task list with detailed information.*
+
+## Contribution Guidelines
+
+We welcome contributions! If you'd like to contribute to My Cool Project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/new-feature`
+3. Make your changes and commit them: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature/new-feature`
+5. Submit a pull request.
+
+Happy coding!

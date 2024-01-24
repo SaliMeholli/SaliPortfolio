@@ -10,7 +10,7 @@ const roboto = Roboto({
 function MyApp({ Component, pageProps }) {
   return (
     <main className={roboto.className}>
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
     </main>
   )
   

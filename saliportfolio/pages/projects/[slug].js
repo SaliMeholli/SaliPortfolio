@@ -124,6 +124,7 @@ export async function getStaticProps({ params }) {
 
   const ProjectsFiles = fs.readdirSync(path.join("content/Projects"));
 
+
   const ProjectsContent = ProjectsFiles.map((ProjectsFilename) => {
     const markDownProject = fs.readFileSync(
       path.join("content/Projects", ProjectsFilename),

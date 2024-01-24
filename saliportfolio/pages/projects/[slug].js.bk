@@ -93,13 +93,13 @@ function posts({ ProjectpagesData, ProjectsContent, ReadingTime, next, previous 
 export default posts;
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("content/Projects"));
+  const files = fs.readdirSync(path.join("content/projects"));
 
   const paths = [];
 
   const localizedPaths = files.map((filename) => {
     const markdownWithMetadata = fs.readFileSync(
-      path.join("content", "Projects", filename),
+      path.join("content", "projects", filename),
       "utf-8"
     );
     const { data } = matter(markdownWithMetadata);
@@ -122,12 +122,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const ProjectsFiles = fs.readdirSync(path.join("content/Projects"));
+  const ProjectsFiles = fs.readdirSync(path.join("content/projects"));
 
 
   const ProjectsContent = ProjectsFiles.map((ProjectsFilename) => {
     const markDownProject = fs.readFileSync(
-      path.join("content/Projects", ProjectsFilename),
+      path.join("content/projects", ProjectsFilename),
       "utf-8"
     );
     const { data: frontmatter, content: markdownContent } =

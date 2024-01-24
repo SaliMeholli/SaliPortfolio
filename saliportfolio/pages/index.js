@@ -28,7 +28,7 @@ export default function Home({ BlogsContent, ProjectsContent }) {
       <HomePage />
       <ProjectsSection projects={ProjectsContent}/>
       <TechStack />
-      
+      .
       <Experience />
     
       <Contact />

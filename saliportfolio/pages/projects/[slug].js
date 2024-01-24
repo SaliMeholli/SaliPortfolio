@@ -80,7 +80,7 @@ function posts({ ProjectpagesData, ProjectsContent, ReadingTime, next, previous 
   <p>{ProjectpagesData?.frontmatter?.description}</p>
   </div>
   
-  <Image src={ProjectpagesData.frontmatter.image} fill className={styles.BannerImage} />
+  <Image src={ProjectpagesData.frontmatter.image} fill className={styles.BannerImage} alt="" />
   
 </div>
 
